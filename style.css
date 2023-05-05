@@ -14,7 +14,7 @@ nav{
 }
 ul{
     padding: 0;
-    margin: 0 0 0 150px;
+    margin: 0 0 0 50px;
     list-style: none;
 }
 li{
@@ -28,12 +28,11 @@ li{
 nav a {
     width: 300px;
     display: block;
-    padding: 20px 20px 20px 450px;
+    padding: 20px 20px 20px 520px;
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
     font-size:50px;
     color: #2F4454;
-    /*-----------------------------------------------------------*/
     text-align: center;
 }
 #main1 {
@@ -50,10 +49,13 @@ header h1 {
 *{
     box-sizing: border-box;
 }
-/*--------------------------------------------------------------------------------*/
-:root{
-    --primary-color:#2E151B;
-    --secondary-color: #000000;
+/*---------------------------------------------------------------------------------------------------------------*/
+:root{                             /*root scope contains both primary and secondary colour*/
+    /* --primary-color:#2E151B;
+    --primary-color: #131313;
+    --secondary-color: #000000; */
+    --primary-color:#000c18;
+    --secondary-color: #001d38;
 }
 
 body{
@@ -64,74 +66,73 @@ body{
 
 
 header{
-    padding:1rem;
-    display:flex;
-    justify-content: flex-end;
+    padding:1rem;       /*for space*/
+    display:flex;       /*so that every thing is in a row*/
+    justify-content: flex-end;    /*to search bar at the end*/  
     background-color: var(--secondary-color);
 }
 
 .search{
     background-color: transparent;
-    border: 2px solid var(--primary-color);
-    padding:0.5rem 1rem;
-    border-radius: 50px;
-    font-size: 1rem;
-    color:#fff;
-    font-family: inherit;
+    border: 2px solid var(--primary-color);  /*border is of primary colour*/
+    padding:0.5rem 1rem;    /*size of the search bar*/
+    border-radius: 50px;    /*to make borders circular*/
+    font-size: 1rem;   /*to increase the length of search bar*/
+    color:#fff;     /*font colour*/
+    font-family: inherit;   /*it will receive the body's font family*/
 }
 
-.search:focus{
-    outline:0;
-    background-color: var(--primary-color);
+.search:focus{      /*when searchbar is in focus*/
+    outline:0;      /*it will remove the outline when we click the searchbar*/
+    background-color: var(--primary-color);   /*shows primary colour when we click on searchbar*/
 }
 
 .search::placeholder{
-    color: rgb(66, 65, 65);
+    color: rgb(66, 65, 65);  /*colour of the word search*/
 }
 
-main{
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: center;
+main{    /*not using . because there is no class called main*/
+    display:flex;    /*to allign every image in a row*/
+    flex-wrap: wrap;  /*to send images in next line*/
+    justify-content: center;   /*to place all the images in center*/
 }
 
 .movie {
-    width: 300px;
-    margin: 1rem;
-    border-radius: 3px;
-    box-shadow: 0.2px 4px 5px rgba(0,0,0,0.1);
+    width: 300px;    /*to make the cards smaller*/
+    margin: 1rem;      /*to create spaces between two cards*/
+    border-radius: 3px;    /*to make card bit rounded*/
+    box-shadow: 0.2px 4px 5px rgba(0,0,0,0.1);   /*for shadow effect under the card*/
     background-color: var(--secondary-color);
     position:relative;
     overflow: hidden;
 }
 
-
 .movie img{
-    width:100%;
+    width:100%;  /*images which are showing in the sceen with respect to black background*/
 }
 
 .movie-info{
-    color:#eee;
-    display: flex;
+    color:#eee;  /*colour of name of movie*/
+    display: flex;   /*to make name and rating of the movie in a row */ 
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between;  /*to create space between name and rating*/
     padding: 0.5rem 1rem 1rem;
     letter-spacing: 0.5px;
 }
 
-.movie-info h3{
+.movie-info h3{     /*it will reduce the size of the black card */
     margin-top: 0;
 }
 
 .movie-info span{
-    background-color: var(--primary-color);
-    padding: 0.25rem 0.5rem;
+    background-color: var(--primary-color);  /*background colour of the rating */
+    padding: 0.25rem 0.5rem;   /*increase size*/
     border-radius: 3px;
     font-weight: bold;
 }
 
-.movie-info span.green{
-    color:lightgreen;
+.movie-info span.green{ 
+    color:lightgreen;   /*when the class is green then the rating colour will be green*/
 }
 
 .movie-info span.orange{
@@ -147,38 +148,40 @@ main{
     left:0;
     right:0;
     bottom:0;
-    background-color: #fff;
-    padding: 1rem;
-    max-height: 100%;
-    transform:translateY(101%);
-    transition:transform 0.3s ease-in;
+    color:white;
+    color:#d2e9ff;
+    background-color: #ffffff;  /*bg colour of overview*/
+    background-color: #001d38;  /*bg colour of overview*/
+    padding: 1rem;           
+    max-height: 100%;        /*100% means height of card*/
+    transform:translateY(101%);   /*to push it down 101%*/
+    transition:transform 0.3s ease-in;   /*to create transition*/
 }
 
-.movie:hover .overview{
+.movie:hover .overview{    /*when we will put our cursor on it, then it will go up*/
     transform:translateY(0)
 }
-
+/*---------------------------------------------------------------------------------------------------*/
 #tags{
     width:80%;
     display:flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap;    /*to print some genres in the next line*/
     justify-content: center;
     align-items: center;
     margin: 10px auto;
 }
-/*-------------------------------------------------------------------------------------*/
 .tag{
-    color:white;
+    color:white;           /*font colour white */
     padding:10px 20px;
     background-color: #1C3334;
+
     border-radius: 50px;
-    margin:5px;
-    display:inline-block;
+    margin:5px;            /*to separate every tag*/
+    display:inline-block;  /*to display the item horizontally instead of vertically*/
     cursor: pointer;
 }
-/*-----------------------------------------------------------------------------------------*/
 .tag.highlight{
-    background-color: #376E6F;
+    background-color: #376E6F;    /*when we will click the tag, colour will be changed*/
 }
 .no-results{
     color:white;
@@ -197,22 +200,23 @@ main{
     cursor:pointer;
 }
 
-.page.disabled{
-    cursor:not-allowed;
+.page.disabled{         
+    cursor:not-allowed;  /*to disable cursor for the first page*/
     color:grey;
 }
 
 .current{
-    padding: 10px 20px;
-    border-radius: 50%;
+    padding: 10px 20px;     /*to create distance between previous page and next page*/
+    border-radius: 50%;     /*to make circle outside page number*/
     border: 5px solid orange;
-    font-size: 20px;
+    font-size: 20px; 
     font-weight: 600;
 }
 
 .know-more{
     background-color: orange;
     color:white;
+    /* color: black; */
     font-size: 16px;
     font-weight: bold;
     border:0;
@@ -220,6 +224,7 @@ main{
     padding: 10px 20px;
     margin-top: 5px;
 }
+/*--------------------------------------------------------------------------------------------------------------------------------*/
 /* The Overlay (background) */
 .overlay {
     /* Height & width depends on how you want to reveal the overlay (see JS below) */   
@@ -277,7 +282,7 @@ main{
     }
   }
 
-
+/*---------------------------------------------------------------------------------------------------------------------------------------------*/
   .embed.hide{
       display: none;
   }
